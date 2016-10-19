@@ -36,6 +36,12 @@ AppAsset::register($this);
             'class' => 'navbar-inverse',
         ],
     ]);
+    
+    $setting=[
+        ['label'=>'สถานะคอมพิวเตอร์','url'=>['/comstatus']],
+    ];
+    
+    
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
         'encodeLabels' => FALSE,
@@ -44,6 +50,7 @@ AppAsset::register($this);
             ['label' => 'About', 'url' => ['/site/about']],
             ['label' => 'ติดต่อ', 'url' => ['/site/contact']],
             ['label' => 'ทดสอบ', 'url' => ['/first1/index']],
+            ['label' => 'ตั้งค่าระบบ', 'item' => $setting],
             Yii::$app->user->isGuest ? (
                 ['label' => 'Login', 'url' => ['/site/login']]
             ) : (
